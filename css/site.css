@@ -269,9 +269,9 @@ h1, h2, h3 {
 
 @media (width < 48rem) {
   .brand { gap: 0.5rem; }
-  .brand__mark { width: 3rem; }
-  .brand__name { font-size: 1.3125rem; }
-  .brand__owner { font-size: 0.5625rem; }
+  .brand__mark { width: 2.75rem; }
+  .brand__name { font-size: 1.1875rem; }
+  .brand__owner { font-size: 0.5rem; }
 }
 
 /* ---------- Header ---------- */
@@ -336,6 +336,12 @@ h1, h2, h3 {
 }
 
 @media (width < 48rem) {
+  /* Four languages and the menu button have to fit next to the logo on a phone. */
+  .site-header__inner { gap: 0.75rem; padding-inline: 1rem; }
+  .site-header__tools { gap: 0.75rem; }
+  .lang { gap: 0; }
+  .lang span { display: none; }
+  .lang button { padding-inline: 0.3125rem; }
   .menu-toggle { display: grid; }
 
   .nav {
@@ -686,6 +692,18 @@ h1, h2, h3 {
 
 /* ---------- Contact ---------- */
 .contact__lead { margin-top: 1.5rem; color: var(--text-muted); }
+
+.contact__intake {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: var(--border);
+  color: var(--text-muted);
+}
+
 .contact__address { margin-top: 2rem; font-style: normal; line-height: 1.5; }
 
 .contact__email {
