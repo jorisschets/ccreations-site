@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CCreations | Joris Schets</title>
+  <meta name="description" data-i18n-content="meta.description" content="Maatwerksystemen voor KMO’s: planning, werkbonnen, offertes en opvolging op één plek, met AI waar het dagelijks verschil maakt.">
+  <meta name="theme-color" content="#f0eae1">
+  <link rel="icon" href="assets/brand/social-avatar.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bai-jamjuree-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/roboto-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#top" class="brand" aria-label="CCreations, Joris Schets">
+        <svg class="brand__mark" viewBox="0 0 74 50" aria-hidden="true"><use href="assets/sprite.svg#logo"/></svg>
+        <span class="brand__text">
+          <span class="brand__name">CCreations</span>
+          <span class="brand__owner">Joris Schets</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie" data-i18n-aria-label="aria.nav">
+        <a href="#projects" data-i18n="nav.projects">Projecten</a>
+        <a href="#what-i-build" data-i18n="nav.build">Wat ik bouw</a>
+        <a href="#how-i-work" data-i18n="nav.method">Hoe ik werk</a>
+        <a href="#about" data-i18n="nav.about">Over</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="site-header__tools">
+        <div class="lang" role="group" aria-label="Taal" data-i18n-aria-label="aria.lang">
+          <button type="button" data-lang="nl" aria-pressed="true">NL</button><span aria-hidden="true">/</span>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button><span aria-hidden="true">/</span>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+          <svg class="icon" aria-hidden="true"><use href="assets/sprite.svg#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="top" class="section hero dotted">
+      <div class="container hero__grid">
+        <div>
+          <p class="hero__kicker" data-i18n="hero.kicker">Fullstack developer &amp; AI-adviseur</p>
+          <h1 class="hero__title" data-i18n-html="hero.title">Systemen die de operatie van <em>KMO’s</em> sturen.</h1>
+          <p class="hero__lead" data-i18n="hero.lead">Planning, werkbonnen, offertes en opvolging op één plek, met AI waar het dagelijks verschil maakt. Voor bedrijven die geen IT-afdeling hebben en toch willen dat hun processen sneller, duidelijker en betrouwbaarder lopen.</p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">
+              <span data-i18n="cta.process">Vertel me over je proces</span>
+              <svg class="icon" aria-hidden="true"><use href="assets/sprite.svg#i-arrow"/></svg>
+            </a>
+            <a href="#projects" class="btn btn--ghost" data-i18n="cta.projects">Bekijk projecten</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="desk">
+            <div class="desk__bar">
+              <span class="desk__id">CC-01 <svg viewBox="0 0 74 50" aria-hidden="true"><use href="assets/sprite.svg#logo"/></svg></span>
+              <span class="desk__status" data-i18n="desk.live">In gebruik</span>
+            </div>
+            <div class="desk__rows">
+              <p class="desk__label" data-i18n="desk.today">Vandaag</p>
+              <dl>
+                <div class="desk__row"><dt data-i18n="desk.plan">Te plannen</dt><dd>12</dd></div>
+                <div class="desk__row"><dt data-i18n="desk.follow">Opvolging</dt><dd>3</dd></div>
+                <div class="desk__row"><dt data-i18n="desk.quote">Offerte</dt><dd>1</dd></div>
+              </dl>
+            </div>
+            <p class="desk__note">
+              <span class="desk__tag">AI</span>
+              <span data-i18n="desk.note">Start met de openstaande opvolging van gisteren.</span>
+            </p>
+          </div>
+          <img class="hero__chart" src="assets/hero-chart.webp" width="1200" height="896" alt="" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--compact section--card" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="benefits-title" data-i18n="benefits.title">Wat KMO’s eraan hebben</h2>
+          <p class="eyebrow" data-i18n="benefits.eyebrow">Voordelen</p>
+        </div>
+        <ol class="benefits">
+          <li data-i18n="benefits.1">Minder tijd aan planning, opvolging en administratie.</li>
+          <li data-i18n="benefits.2">Eén overzicht in plaats van losse tools, e-mail en Excel.</li>
+          <li data-i18n="benefits.3">AI die prioriteiten zet, offertes voorbereidt of signalen filtert, zonder dat het team specialist moet worden.</li>
+          <li data-i18n="benefits.4">Systemen die blijven werken wanneer het bedrijf groeit.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 class="section__title" id="projects-title" data-i18n="nav.projects">Projecten</h2>
+        <p class="section__intro" data-i18n="projects.intro">Geen namen, geen klantgegevens. Wel het probleem, wat er gebouwd is en wat het veranderde.</p>
+
+        <div class="projects">
+          <article class="project">
+            <div>
+              <p class="project__num">01</p>
+              <h3 class="project__title" data-i18n="p1.title">Operationeel portaal</h3>
+              <dl class="project__facts">
+                <div><dt class="eyebrow" data-i18n="projects.problem">Probleem</dt><dd data-i18n="p1.problem">Planning, werkbonnen, mailbox en offertes zaten in aparte tools. Niemand had één beeld van wat er vandaag moest gebeuren.</dd></div>
+                <div><dt class="eyebrow" data-i18n="projects.built">Gebouwd</dt><dd data-i18n="p1.built">Eén portaal voor planning, werkbonnen, inbox en offertes, met AI die prioriteiten voorstelt en opvolging klaarzet.</dd></div>
+                <div><dt class="eyebrow" data-i18n="projects.result">Resultaat</dt><dd data-i18n="p1.result">Het team start de dag vanuit één overzicht en opvolging blijft niet meer liggen.</dd></div>
+              </dl>
+            </div>
+            <figure class="project__shot project__shot--image">
+              <img src="assets/project-portaal.webp" width="1600" height="987" loading="lazy" alt="Het startscherm van het portaal met openstaande acties en een AI-samenvatting; namen zijn onleesbaar gemaakt" data-i18n-alt="p1.alt">
+            </figure>
+          </article>
+
+          <article class="project">
+            <div>
+              <p class="project__num">02</p>
+              <h3 class="project__title" data-i18n="p2.title">Werkbon- en onderhoudssysteem</h3>
+              <dl class="project__facts">
+                <div><dt class="eyebrow" data-i18n="projects.problem">Probleem</dt><dd data-i18n="p2.problem">Werkbonnen stonden op papier en in Excel. Onderdelen en onderhoudshistoriek waren moeilijk terug te vinden.</dd></div>
+                <div><dt class="eyebrow" data-i18n="projects.built">Gebouwd</dt><dd data-i18n="p2.built">Een systeem voor dagelijkse werkbonnen, machines, onderdelen in stock en onderhoudslogging, voor techniekers en planning.</dd></div>
+                <div><dt class="eyebrow" data-i18n="projects.result">Resultaat</dt><dd data-i18n="p2.result">Techniekers registreren ter plaatse en de planning ziet meteen wat klaar is en wat ontbreekt.</dd></div>
+              </dl>
+            </div>
+            <figure class="project__shot project__shot--image">
+              <img src="assets/project-werkbonnen.webp" width="1600" height="902" loading="lazy" alt="Het dagoverzicht van de werkbonnen met status en geregistreerde tijd; klantgegevens zijn onleesbaar gemaakt" data-i18n-alt="p2.alt">
+            </figure>
+          </article>
+
+          <article class="project">
+            <div>
+              <p class="project__num">03</p>
+              <h3 class="project__title" data-i18n="p3.title">Online kasboek</h3>
+              <dl class="project__facts">
+                <div><dt class="eyebrow" data-i18n="projects.problem">Probleem</dt><dd data-i18n="p3.problem">Het kasboek werd met de hand bijgehouden en klopte niet altijd met de dagtotalen.</dd></div>
+                <div><dt class="eyebrow" data-i18n="projects.built">Gebouwd</dt><dd data-i18n="p3.built">Een online kasboek dat elke dag optelt, met import van dagoverzichten en export naar de boekhouder.</dd></div>
+                <div><dt class="eyebrow" data-i18n="projects.result">Resultaat</dt><dd data-i18n="p3.result">De kas klopt elke dag en de boekhouder krijgt een export in plaats van een map papier.</dd></div>
+              </dl>
+            </div>
+            <figure class="project__shot project__shot--image">
+              <img src="assets/project-kasboek.webp" width="1400" height="933" loading="lazy" alt="Het online kasboek in demomodus: dagboekingen met totalen en saldo" data-i18n-alt="p3.alt">
+            </figure>
+          </article>
+          <article class="project">
+            <div>
+              <p class="project__num">04</p>
+              <h3 class="project__title" data-i18n="p4.title">Eigen huisstijl met AI</h3>
+              <dl class="project__facts">
+                <div><dt class="eyebrow" data-i18n="projects.problem">Probleem</dt><dd data-i18n="p4.problem">CCreations had een naam, maar nog geen logo, kleuren of vaste vormgeving.</dd></div>
+                <div><dt class="eyebrow" data-i18n="projects.built">Gebouwd</dt><dd data-i18n="p4.built">Een logo, palet en typografie ontworpen met AI als schetstool, en daarna uitgewerkt tot een merkbord in code.</dd></div>
+                <div><dt class="eyebrow" data-i18n="projects.result">Resultaat</dt><dd data-i18n="p4.result">Eén merkbord waar site, documenten en socials uit dezelfde bron putten.</dd></div>
+              </dl>
+              <a href="merk.html" class="text-link project__link">
+                <span data-i18n="p4.link">Bekijk het merkbord</span>
+                <svg class="icon" aria-hidden="true"><use href="assets/sprite.svg#i-arrow"/></svg>
+              </a>
+            </div>
+            <figure class="project__shot project__shot--brand dotted">
+              <img src="assets/brand/logo-primary-light.svg" width="212" height="162" alt="CCreations Joris Schets" loading="lazy">
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="what-i-build" class="section section--card" aria-labelledby="services-title">
+      <div class="container">
+        <h2 class="section__title" id="services-title" data-i18n="nav.build">Wat ik bouw</h2>
+        <p class="section__intro" data-i18n="services.intro">Drie soorten werk, telkens op maat van hoe jouw bedrijf draait.</p>
+        <ul class="services">
+          <li class="service">
+            <svg class="icon service__icon" aria-hidden="true"><use href="assets/sprite.svg#i-portal"/></svg>
+            <h3 data-i18n="services.1.title">Operationele portalen</h3>
+            <p data-i18n="services.1.text">Planning, werkbonnen, offertes en opvolging in één systeem voor kantoor en werkvloer.</p>
+          </li>
+          <li class="service">
+            <svg class="icon service__icon" aria-hidden="true"><use href="assets/sprite.svg#i-spark"/></svg>
+            <h3 data-i18n="services.2.title">AI in het dagelijks werk</h3>
+            <p data-i18n="services.2.text">Assistenten die prioriteiten zetten, offertes voorbereiden en signalen filteren, binnen de tools die je team al gebruikt.</p>
+          </li>
+          <li class="service">
+            <svg class="icon service__icon" aria-hidden="true"><use href="assets/sprite.svg#i-globe"/></svg>
+            <h3 data-i18n="services.3.title">Websites en koppelingen</h3>
+            <p data-i18n="services.3.text">Snelle websites en koppelingen met boekhouding, e-mail en bestaande software.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="how-i-work" class="section method" aria-labelledby="method-title">
+      <canvas class="method__waves" id="waves" aria-hidden="true"></canvas>
+      <div class="container split method__grid">
+        <div>
+          <h2 class="eyebrow method__title" id="method-title" data-i18n="nav.method">Hoe ik werk</h2>
+          <p class="method__statement" data-i18n="method.statement">We starten met het proces dat het meeste tijd kost of de meeste fouten veroorzaakt. Pas als het verschil maakt, bouwen we verder.</p>
+          <a href="#contact" class="btn btn--light" data-i18n="cta.process">Vertel me over je proces</a>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <h3 data-i18n="steps.1.title">Proces kiezen</h3>
+            <p data-i18n="steps.1.text">Een gesprek en een blik op de werkvloer. We leggen vast wat beter moet.</p>
+          </li>
+          <li class="step">
+            <h3 data-i18n="steps.2.title">Afgebakend bouwen</h3>
+            <p data-i18n="steps.2.text">Eén eerste versie voor dat ene proces, passend bij hoe je nu werkt en snel in gebruik.</p>
+          </li>
+          <li class="step">
+            <h3 data-i18n="steps.3.title">Toetsen in de praktijk</h3>
+            <p data-i18n="steps.3.text">Het team werkt ermee. We kijken wat het oplevert en wat nog schuurt.</p>
+          </li>
+          <li class="step">
+            <h3 data-i18n="steps.4.title">Verder bouwen</h3>
+            <p data-i18n="steps.4.text">Werkt het, dan volgt het volgende proces. Zo niet, dan sturen we bij voor we uitbreiden.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container split about__grid">
+        <!-- Dummy: replace the <svg> with <img src="assets/joris-schets.webp" alt="Joris Schets"> and drop the figcaption. -->
+        <figure class="dummy about__portrait">
+          <svg aria-hidden="true"><use href="assets/sprite.svg#dummy-portrait"/></svg>
+          <figcaption data-i18n="dummy.portrait">Dummy: portret volgt</figcaption>
+        </figure>
+        <div>
+          <p class="eyebrow" data-i18n="nav.about">Over</p>
+          <h2 class="section__title" id="about-title">Joris Schets</h2>
+          <div class="about__body">
+            <p data-i18n="about.1">Ik ben fullstack developer en AI-adviseur. Onder de naam CCreations bouw ik maatwerksystemen voor KMO’s zonder eigen IT-afdeling.</p>
+            <p data-i18n="about.2">Ik werk rechtstreeks met de mensen die het systeem elke dag gebruiken. Zo blijft het eenvoudig en doet het wat de werkvloer nodig heeft.</p>
+          </div>
+          <a href="https://github.com/jorisschets" target="_blank" rel="noreferrer" class="about__link">
+            GitHub
+            <svg class="icon" aria-hidden="true"><use href="assets/sprite.svg#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--card" aria-labelledby="contact-title">
+      <div class="container split">
+        <div>
+          <h2 class="section__title" id="contact-title" data-i18n="nav.contact">Contact</h2>
+          <p class="contact__lead" data-i18n="contact.lead">Beschrijf kort het proces dat je het meeste tijd kost. Ik antwoord met een eerste idee over wat haalbaar is.</p>
+          <address class="contact__address">
+            <strong>Joris Schets</strong><br>
+            C. Moixarra, 7, 3/1<br>
+            08800 Vilanova i la Geltrú, <span data-i18n="contact.country">Spanje</span><br>
+            <a class="contact__email" href="mailto:jorisschets@ccreations.tools">jorisschets@ccreations.tools</a>
+            <span class="contact__legal" data-i18n="contact.legal">Zelfstandige in Spanje · btw-nummer ESZ1659447W</span>
+          </address>
+          <p class="contact__hint" data-i18n="contact.hint">De knop zet je bericht klaar in je eigen e-mailprogramma. Er wordt niets automatisch verzonden.</p>
+        </div>
+        <form class="form" id="contact-form">
+          <div class="field">
+            <label for="contact-name" data-i18n="contact.name">Naam</label>
+            <input id="contact-name" name="name" type="text" required autocomplete="name" placeholder="Voornaam en naam" data-i18n-placeholder="contact.namePh">
+          </div>
+          <div class="field">
+            <label for="contact-email" data-i18n="contact.email">E-mail</label>
+            <input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="naam@bedrijf.be" data-i18n-placeholder="contact.emailPh">
+          </div>
+          <div class="field">
+            <label for="contact-process" data-i18n="contact.process">Het proces</label>
+            <textarea id="contact-process" name="process" required rows="4" placeholder="Bijvoorbeeld: planning van techniekers, opvolging van offertes…" data-i18n-placeholder="contact.processPh"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block" data-i18n="contact.submit">Bericht klaarzetten</button>
+          <p class="form__status" id="contact-status" role="status" hidden>
+            <span data-i18n="contact.ready">Je bericht staat klaar en is gekopieerd waar je browser dat toelaat.</span>
+            <a id="contact-mailto" href="mailto:" data-i18n="contact.open">Open in je e-mailprogramma</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span class="brand">
+        <svg class="brand__mark" viewBox="0 0 74 50" aria-hidden="true"><use href="assets/sprite.svg#logo"/></svg>
+        <span class="brand__text">
+          <span class="brand__name">CCreations</span>
+          <span class="brand__owner">Joris Schets</span>
+        </span>
+      </span>
+      <div class="site-footer__links">
+        <a href="https://github.com/jorisschets" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="merk.html" data-i18n="nav.brand">Merkbord</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <p class="site-footer__legal">© 2026 CCreations Joris Schets · ESZ1659447W</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/site.js"></script>
+</body>
+</html>
