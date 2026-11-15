@@ -221,27 +221,6 @@ h1, h2, h3 {
   .split { grid-template-columns: 5fr 7fr; gap: 5rem; }
 }
 
-/* Stand-in frames until the real portrait and screenshots arrive. */
-.dummy {
-  position: relative;
-  overflow: hidden;
-  border: var(--border);
-  border-radius: var(--radius);
-  background: var(--card);
-}
-.dummy svg { width: 100%; height: 100%; }
-
-.dummy figcaption {
-  position: absolute;
-  inset: auto auto 0.75rem 0.75rem;
-  padding: 0.25rem 0.625rem;
-  border-radius: 4px;
-  background: var(--charcoal);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--sand);
-}
-
 /* ---------- Brand ---------- */
 
 /* Proportions follow the compact logo: text block as tall as the monogram, owner line centred under the wordmark. */
@@ -669,7 +648,21 @@ h1, h2, h3 {
 
 /* ---------- About ---------- */
 .about__grid { align-items: center; }
-.about__portrait { width: 100%; max-width: 24rem; aspect-ratio: 4 / 5; background: var(--sand); }
+
+.about__portrait {
+  width: 100%;
+  max-width: 24rem;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: var(--border);
+  border-radius: var(--radius);
+}
+
+.about__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .about__body {
   display: flex;
