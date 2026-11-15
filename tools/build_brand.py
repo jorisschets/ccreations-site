@@ -123,6 +123,16 @@ for tone, ink in (("light", CHARCOAL), ("dark", SAND)):
     write(f"logo-horizontal-{tone}.svg", svg(w, h, body, "CCreations Joris Schets"))
     write(f"logo-mark-{tone}.svg", svg(MARK_W, MARK_H, mark(ink), "CCreations"))
 
+# ---------- Favicon ----------
+# The monogram fills the full width of a square. The C switches to sand when the browser uses a dark theme.
+FAVICON_MARK = mark("currentColor").replace('stroke="currentColor"', 'class="c"')
+(ROOT / "assets" / "favicon.svg").write_text(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 74">'
+    f"<style>.c{{stroke:{CHARCOAL}}}@media(prefers-color-scheme:dark){{.c{{stroke:{SAND}}}}}</style>"
+    f'<g transform="translate(0 12)">{FAVICON_MARK}</g></svg>\n',
+    encoding="utf-8",
+)
+
 # ---------- Social templates ----------
 DOTS = (
     '<defs><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">'
