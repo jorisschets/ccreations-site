@@ -42,7 +42,7 @@ pip install fonttools brotli uharfbuzz
 python3 tools/build_brand.py
 ```
 
-The same script writes `assets/favicon.svg`. Its PNG fallbacks, `favicon-32.png` and `apple-touch-icon.png`, were rasterised from the monogram once and need redoing by hand if the monogram changes.
+The same script writes `assets/favicon.svg`. The PNG files (`favicon-32.png`, `apple-touch-icon.png` and `brand/social-avatar.png`) were rasterised from the generated SVGs once and need redoing by hand if the monogram changes.
 
 ## Checks
 

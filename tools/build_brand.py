@@ -123,13 +123,22 @@ for tone, ink in (("light", CHARCOAL), ("dark", SAND)):
     write(f"logo-horizontal-{tone}.svg", svg(w, h, body, "CCreations Joris Schets"))
     write(f"logo-mark-{tone}.svg", svg(MARK_W, MARK_H, mark(ink), "CCreations"))
 
-# ---------- Favicon ----------
-# The monogram fills the full width of a square. The C switches to sand when the browser uses a dark theme.
-FAVICON_MARK = mark("currentColor").replace('stroke="currentColor"', 'class="c"')
+# ---------- Emblem: favicon and profile image ----------
+# A close crop of the monogram, cut to the outer edge of the orange ring so the result is a perfect disc.
+RING_EDGE = '<clipPath id="ring-edge"><circle cx="25" cy="25" r="24.8"/></clipPath>'
+EMBLEM_BOX = "0.2 0.2 49.6 49.6"
+
+
+def emblem(ink):
+    return f'{RING_EDGE}<g clip-path="url(#ring-edge)">{mark(ink)}</g>'
+
+
+# At tab size the full mark is too small to read. The C switches to sand when the browser uses a dark theme.
+FAVICON_EMBLEM = emblem("currentColor").replace('stroke="currentColor"', 'class="c"')
 (ROOT / "assets" / "favicon.svg").write_text(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 74">'
+    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{EMBLEM_BOX}">'
     f"<style>.c{{stroke:{CHARCOAL}}}@media(prefers-color-scheme:dark){{.c{{stroke:{SAND}}}}}</style>"
-    f'<g transform="translate(0 12)">{FAVICON_MARK}</g></svg>\n',
+    f"{FAVICON_EMBLEM}</svg>\n",
     encoding="utf-8",
 )
 
@@ -171,13 +180,11 @@ write(
     ),
 )
 
-# Profile image, 400 x 400. The monogram stays inside the circle most platforms crop to.
-write(
-    "social-avatar.svg",
-    svg(
-        400, 400,
-        f'<rect width="400" height="400" fill="{SAND}"/>'
-        f'<g transform="translate(78 117.6) scale(3.3)">{mark(CHARCOAL)}</g>',
-        "CCreations profielbeeld",
-    ),
+# Profile image: the emblem on an off-white square. The ring touches all four sides,
+# so the circular mask most platforms apply follows its edge exactly.
+(OUT / "social-avatar.svg").write_text(
+    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{EMBLEM_BOX}" width="400" height="400" role="img">'
+    f'<title>CCreations profielbeeld</title><rect x="0.2" y="0.2" width="49.6" height="49.6" fill="{CARD}"/>'
+    f"{emblem(CHARCOAL)}</svg>\n",
+    encoding="utf-8",
 )

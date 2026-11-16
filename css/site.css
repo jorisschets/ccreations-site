@@ -647,6 +647,15 @@ h1, h2, h3 {
 }
 
 /* ---------- About ---------- */
+
+/* The same close crop of the monogram that serves as profile image on other channels. */
+.about__emblem {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+}
+
 .about__role { margin-top: 0.75rem; color: var(--text-muted); }
 
 .about__body {
