@@ -18,7 +18,7 @@ OUT = ROOT / "assets" / "brand"
 
 ORANGE, AMBER, CHARCOAL, SAND, CARD = "#e35e20", "#efa037", "#2c302e", "#f0eae1", "#fcfaf7"
 
-MARK_W = MARK_H = 49.6
+MARK_W, MARK_H = 74, 50
 
 
 class Face:
@@ -60,11 +60,27 @@ BODY = Face("roboto-400.woff2")                 # owner line
 LABEL = Face("roboto-condensed-700.woff2")      # eyebrows
 
 
-MARK_BOX = "0.2 0.2 49.6 49.6"
+EMBLEM_BOX = "0.2 0.2 49.6 49.6"
 
 
 def mark(ink):
-    """The emblem: an orange ring with a crescent passing over it at the top and under it at the bottom.
+    """The logo mark: two interlocked letters on a 74 x 50 grid. `ink` colours the C.
+
+    The C passes over the ring at the top and under it at the bottom.
+    """
+    return (
+        f'<g fill="none" stroke-width="9.6">'
+        f'<circle cx="25" cy="25" r="20" stroke="{ORANGE}"/>'
+        f'<path d="M65.18 13.24A20 20 0 1 0 65.18 36.76" stroke="{ink}"/>'
+        f'<path d="M45 25A20 20 0 0 1 5 25" stroke="{ORANGE}"/>'
+        f"</g>"
+        f'<path d="M45 10.34A24.8 24.8 0 0 1 45 39.66A15.2 15.2 0 0 1 37 34.33'
+        f'A15.2 15.2 0 0 0 37 15.67A15.2 15.2 0 0 1 45 10.34Z" fill="{AMBER}"/>'
+    )
+
+
+def emblem(ink):
+    """The icon: a close crop of the monogram, cut to the outer edge of the ring. An orange ring with a crescent passing over it at the top and under it at the bottom.
 
     Drawn inside a disc of radius 24.8 around (25, 25). `ink` colours the crescent.
     """
@@ -76,22 +92,17 @@ def mark(ink):
     )
 
 
-def mark_at_origin(ink):
-    """The emblem shifted so that its box starts at (0, 0), for use inside lockups."""
-    return f'<g transform="translate(-0.2 -0.2)">{mark(ink)}</g>'
-
-
 def lockup_horizontal(ink):
-    """Emblem with the wordmark to its right. Returns (markup, width, height)."""
+    """Logo mark with the wordmark to its right. Returns (markup, width, height)."""
     name, name_w = DISPLAY.outline("CCreations", 32, 0, 27.5)
     left = MARK_W + 9
     owner, _ = BODY.outline("JORIS SCHETS", 10.5, left + name_w / 2, 44, tracking=0.32, anchor="middle")
-    body = f'{mark_at_origin(ink)}<path fill="{ink}" d="{name}" transform="translate({left} 0)"/><path fill="{ink}" d="{owner}"/>'
+    body = f'{mark(ink)}<path fill="{ink}" d="{name}" transform="translate({left} 0)"/><path fill="{ink}" d="{owner}"/>'
     return body, left + name_w + 1, MARK_H
 
 
 def lockup_stacked(ink):
-    """Emblem above the wordmark. Returns (markup, width, height)."""
+    """Logo mark above the wordmark. Returns (markup, width, height)."""
     _, name_w = DISPLAY.outline("CCreations", 40)
     width = name_w + 2
     centre = width / 2
@@ -99,7 +110,7 @@ def lockup_stacked(ink):
     name, _ = DISPLAY.outline("CCreations", 40, centre, 133, anchor="middle")
     owner, _ = BODY.outline("JORIS SCHETS", 13, centre, 158, tracking=0.32, anchor="middle")
     body = (
-        f'<g transform="translate({centre - MARK_W * scale / 2:.2f} 0) scale({scale})">{mark_at_origin(ink)}</g>'
+        f'<g transform="translate({centre - MARK_W * scale / 2:.2f} 0) scale({scale})">{mark(ink)}</g>'
         f'<path fill="{ink}" d="{name}"/><path fill="{ink}" d="{owner}"/>'
     )
     return body, width, 162
@@ -129,13 +140,14 @@ for tone, ink in (("light", CHARCOAL), ("dark", SAND)):
     write(f"logo-primary-{tone}.svg", svg(w, h, body, "CCreations Joris Schets"))
     body, w, h = lockup_horizontal(ink)
     write(f"logo-horizontal-{tone}.svg", svg(w, h, body, "CCreations Joris Schets"))
-    write(f"logo-mark-{tone}.svg", svg(MARK_W, MARK_H, mark_at_origin(ink), "CCreations"))
+    write(f"logo-mark-{tone}.svg", svg(MARK_W, MARK_H, mark(ink), "CCreations"))
 
 # ---------- Favicon ----------
-# The crescent switches to sand when the browser uses a dark theme.
-FAVICON_MARK = mark("currentColor").replace('fill="currentColor"', 'class="c"')
+# The full logo mark is too small to read at tab size, so the favicon uses the icon.
+# Its crescent switches to sand when the browser uses a dark theme.
+FAVICON_MARK = emblem("currentColor").replace('fill="currentColor"', 'class="c"')
 (ROOT / "assets" / "favicon.svg").write_text(
-    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{MARK_BOX}">'
+    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{EMBLEM_BOX}">'
     f"<style>.c{{fill:{CHARCOAL}}}@media(prefers-color-scheme:dark){{.c{{fill:{SAND}}}}}</style>"
     f"{FAVICON_MARK}</svg>\n",
     encoding="utf-8",
@@ -179,11 +191,11 @@ write(
     ),
 )
 
-# Profile image: the emblem on an off-white square. The ring touches all four sides,
+# Profile image: the icon on an off-white square. The ring touches all four sides,
 # so the circular mask most platforms apply follows its edge exactly.
 (OUT / "social-avatar.svg").write_text(
-    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{MARK_BOX}" width="400" height="400" role="img">'
+    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{EMBLEM_BOX}" width="400" height="400" role="img">'
     f'<title>CCreations profielbeeld</title><rect x="0.2" y="0.2" width="49.6" height="49.6" fill="{CARD}"/>'
-    f"{mark(CHARCOAL)}</svg>\n",
+    f"{emblem(CHARCOAL)}</svg>\n",
     encoding="utf-8",
 )
