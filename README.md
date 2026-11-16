@@ -79,4 +79,4 @@ The code (HTML, CSS, JavaScript, Python) is released under the MIT licence, see 
 
 Not covered by that licence, all rights reserved: the CCreations name and logo, everything in `assets/brand/`, the texts, the illustrations and the screenshots.
 
-The fonts in `assets/fonts/` are Bai Jamjuree, Roboto and Roboto Condensed, each under the SIL Open Font License 1.1.
+The fonts in `assets/fonts/` are Bai Jamjuree, Roboto and Roboto Condensed, and `tools/screens/fonts/` holds Source Serif 4, used only to render one screen. All are under the SIL Open Font License 1.1.

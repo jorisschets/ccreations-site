@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Asesor jurídico, un caso (reconstruido con datos ficticios)</title>
+<link rel="stylesheet" href="screens.css">
+<style>
+  body { display: grid; grid-template-columns: 150px 1fr 178px; grid-template-rows: auto 1fr; background: #f3f4f6; color: #172033; font-size: 11px; }
+  .serif { font-family: "Source Serif 4", Georgia, serif; }
+  aside { grid-row: 1 / -1; display: flex; flex-direction: column; gap: 10px; padding: 14px 10px; border-right: 1px solid #e3e5ea; background: #fff; }
+  .brand { gap: 7px; font-size: 13px; font-weight: 700; }
+  .brand i { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #dba42f; font-style: normal; color: #172033; }
+  .units { padding: 8px; border: 1px solid #e3e5ea; border-radius: 8px; background: #f6f7f9; }
+  .units small, .label { display: block; margin-bottom: 4px; font-size: 9px; color: #6a7283; }
+  .units li { gap: 6px; padding: 5px 6px; border-radius: 5px; font-weight: 500; }
+  .units li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--dot); }
+  .units .on { border-left: 2px solid #dba42f; background: #fff; }
+  .new { padding: 8px; border-radius: 6px; background: #dba42f; font-weight: 700; text-align: center; }
+  .search { padding: 6px 8px; border: 1px solid #d9dce3; border-radius: 6px; color: #8a91a1; }
+  .case { padding: 6px 8px; border-radius: 6px; font-weight: 500; }
+  .case small { display: block; font-size: 9px; font-weight: 400; color: #6a7283; }
+  .case.on { border-left: 2px solid #dba42f; background: #fdf6e7; }
+  header { grid-column: 2 / -1; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #e3e5ea; background: #fff; }
+  .btn { padding: 6px 10px; border: 1px solid #d9dce3; border-radius: 6px; background: #fff; font-weight: 500; }
+  header h1 { font-size: 13px; font-weight: 700; letter-spacing: 0.02em; }
+  header p { font-size: 9.5px; color: #6a7283; }
+  main { display: flex; flex-direction: column; gap: 10px; min-height: 0; padding: 14px 26px 10px; }
+  .ask { align-self: flex-end; padding: 8px 12px; border-radius: 8px; background: #1c2c4c; font-size: 11.5px; color: #fff; }
+  .who { gap: 7px; font-weight: 700; }
+  .who i { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #dba42f; font-size: 10px; font-style: normal; }
+  .who small { font-weight: 400; color: #6a7283; }
+  .answer { display: flex; flex-direction: column; gap: 7px; font-size: 12px; line-height: 1.5; }
+  .answer ul { display: flex; flex-direction: column; gap: 5px; padding-left: 16px; list-style: disc; }
+  .cite { padding: 1px 7px; border: 1px solid #ecd28c; border-radius: 99px; background: #fdf6e2; font-family: "Roboto", sans-serif; font-size: 9.5px; font-weight: 500; white-space: nowrap; }
+  .compose { margin-top: auto; padding: 9px 10px; border: 1px solid #d9dce3; border-radius: 9px; background: #fff; }
+  .compose p { margin-bottom: 8px; color: #8a91a1; }
+  .compose .row { gap: 6px; }
+  .send { padding: 6px 12px; border-radius: 6px; background: #1c2c4c; font-weight: 700; color: #fff; }
+  .note { font-size: 8.5px; color: #6a7283; text-align: right; }
+  .docs { padding: 12px 10px; border-left: 1px solid #e3e5ea; background: #fff; }
+  .docs h2 { margin-bottom: 8px; font-size: 11px; }
+  .docs h2 span { font-weight: 400; color: #6a7283; }
+  .drop { margin-bottom: 10px; padding: 8px; border: 1px dashed #c9cdd6; border-radius: 7px; font-weight: 500; }
+  .drop small, .docs li small { display: block; font-size: 8.5px; font-weight: 400; color: #6a7283; }
+  .docs li { padding: 5px 0; }
+</style>
+</head>
+<body>
+  <aside>
+    <div class="row brand"><i>§</i>Asesor</div>
+    <div class="units">
+      <small>Despacho</small>
+      <ul>
+        <li class="row on" style="--dot:#dba42f">Transporte</li>
+        <li class="row" style="--dot:#3d7a5f">Almacén</li>
+        <li class="row" style="--dot:#3f6fd1">Particular</li>
+      </ul>
+    </div>
+    <div class="new">+ Nuevo caso</div>
+    <div>
+      <span class="label">Casos</span>
+      <div class="search">Buscar un caso</div>
+    </div>
+    <div class="case">PROVEEDOR DEMO<small>Otro asunto · 15 nov</small></div>
+    <div class="case on">CLIENTE DEMO<small>Revisión de un contrato · 7 nov</small></div>
+  </aside>
+
+  <header class="row">
+    <span class="btn">‹ Mis casos</span>
+    <div><h1>CLIENTE DEMO</h1><p>Revisión de un contrato · Abierto el 7 de noviembre de 2026</p></div>
+    <span class="grow"></span>
+    <span class="btn">Informe completo</span>
+  </header>
+
+  <main>
+    <div class="ask">¿Desde qué mes puedo reclamar legalmente la tasa de combustible?</div>
+    <div class="row who"><i>§</i>Asesor <small>13:32 · 18 s</small></div>
+    <div class="answer serif">
+      <p><b>Hoy puedes reclamar la revisión por gasóleo de los portes de mediados de octubre de 2025 en adelante, si el cliente paga a 30 días.</b> Si paga a 60 días, desde mediados de septiembre.</p>
+      <ul>
+        <li>La revisión por gasóleo es obligatoria por ley <span class="cite">Ley 15/2009 · art. 38</span>. Lo que limita hasta dónde puedes ir hacia atrás es la prescripción.</li>
+        <li>Las reclamaciones de precio prescriben al año, contado desde que vencía el pago de cada porte <span class="cite">Ley 15/2009 · art. 79</span>.</li>
+      </ul>
+      <p><b>Lo urgente:</b> una reclamación escrita detiene el plazo. Revisa el borrador antes con tu abogado.</p>
+    </div>
+    <div class="compose">
+      <p>Escribe tu pregunta o explica el caso…</p>
+      <div class="row"><span class="btn">Adjuntar</span><span class="btn">Dictar</span><span class="btn">Cuestiona mi postura</span><span class="grow"></span><span class="send">Enviar →</span></div>
+    </div>
+    <p class="note">El asesor orienta; en decisiones importantes, consulta con tu abogado.</p>
+  </main>
+
+  <section class="docs">
+    <h2>Documentos del caso <span>50</span></h2>
+    <div class="drop">Añadir documentos<small>Correos, PDF, Word o Excel</small></div>
+    <span class="label">Documentos 14</span>
+    <ul>
+      <li>Anexo I operativo 2026<small>5 páginas</small></li>
+      <li>Anexo II SLA 2026<small>5 páginas</small></li>
+      <li>Anexo. Indexación combustible<small>2 páginas</small></li>
+      <li>Código de conducta para proveedores<small>17 páginas</small></li>
+      <li>Checklist para el contrato de transporte<small>9 páginas</small></li>
+      <li>Protección de datos<small>6 páginas</small></li>
+    </ul>
+    <span class="label" style="margin-top:8px">Correos 36</span>
+  </section>
+</body>
+</html>

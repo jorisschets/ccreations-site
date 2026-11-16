@@ -23,6 +23,7 @@ SCREENS = {
     "werkbonnen-desktop": DESKTOP,
     "werkbonnen-mobile": PHONE,
     "kasboek-desktop": DESKTOP,
+    "asesor-desktop": DESKTOP,
 }
 
 with sync_playwright() as playwright:
