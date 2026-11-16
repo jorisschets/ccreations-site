@@ -38,14 +38,14 @@ tools/render_screens.py Renders those sources to assets/screens/
 
 **Contact form.** The form sends nothing itself. It opens a draft in the visitor's own email app. The receiving address is `CONTACT_EMAIL` at the top of `js/site.js`. The intake button next to it links to a Google Calendar booking page; nothing loads from Google unless a visitor clicks it.
 
-**Brand files.** The logos and social templates are generated, with all text converted to outlines. After changing a colour, a font or the monogram, regenerate them:
+**Brand files.** The logos and social templates are generated, with all text converted to outlines. After changing a colour, a font or the emblem, regenerate them:
 
 ```sh
 pip install fonttools brotli uharfbuzz
 python3 tools/build_brand.py
 ```
 
-The same script writes `assets/favicon.svg`. The PNG files (`favicon-32.png`, `apple-touch-icon.png` and `brand/social-avatar.png`) were rasterised from the generated SVGs once and need redoing by hand if the monogram changes.
+The same script writes `assets/favicon.svg`. The PNG files (`favicon-32.png`, `apple-touch-icon.png` and `brand/social-avatar.png`) were rasterised from the generated SVGs once and need redoing by hand if the emblem changes.
 
 **Project screens.** Each screen in the Projects section is an HTML page in `tools/screens/`, rendered to an image. After editing one:
 
