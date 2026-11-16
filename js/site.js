@@ -4,6 +4,7 @@ import { translations } from "./translations.js";
 const CONTACT_EMAIL = "jorisschets@ccreations.tools";
 const STORAGE_KEY = "ccreations.lang";
 const DEFAULT_LANG = "nl";
+const FALLBACK_LANG = "en"; /* for visitors whose browser language the site does not offer */
 const TRANSLATED_ATTRIBUTES = ["placeholder", "alt", "aria-label", "content"];
 
 /* ---------- Language switch ---------- */
@@ -62,8 +63,20 @@ langButtons.forEach((button) => {
   });
 });
 
-const storedLang = readStoredLanguage();
-if (storedLang && storedLang !== DEFAULT_LANG) setLanguage(storedLang);
+/* An earlier choice wins; otherwise follow the browser's language list, in the visitor's order of preference. */
+function preferredLanguage() {
+  const stored = readStoredLanguage();
+  if (stored && stored in dictionaries) return stored;
+
+  const browserLanguages = navigator.languages?.length ? navigator.languages : [navigator.language ?? ""];
+  const match = browserLanguages
+    .map((tag) => tag.toLowerCase().split("-")[0])
+    .find((lang) => lang in dictionaries);
+  return match ?? FALLBACK_LANG;
+}
+
+const initialLang = preferredLanguage();
+if (initialLang !== DEFAULT_LANG) setLanguage(initialLang);
 
 /* ---------- Mobile menu ---------- */
 const nav = document.getElementById("site-nav");

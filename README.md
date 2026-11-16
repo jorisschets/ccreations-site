@@ -31,7 +31,7 @@ tools/build_brand.py    Generates everything in assets/brand/
 
 **Design tokens.** Colours, fonts, borders, radius and spacing are custom properties in the `:root` block at the top of `css/site.css`. The brand board reads the same tokens, so it cannot drift from the site.
 
-**Languages.** Dutch is written in the HTML and is the source of truth. Elements carry a `data-i18n="key"` attribute; `js/site.js` reads the Dutch text from the page once and swaps in the French, Spanish or English string from `js/translations.js`. Attributes are translated with `data-i18n-placeholder`, `data-i18n-alt`, `data-i18n-aria-label` and `data-i18n-content`. To add a string: write it in Dutch in the HTML with a new key, then add that key to every language in `js/translations.js`.
+**Languages.** Dutch is written in the HTML and is the source of truth. Elements carry a `data-i18n="key"` attribute; `js/site.js` reads the Dutch text from the page once and swaps in the French, Spanish or English string from `js/translations.js`. Attributes are translated with `data-i18n-placeholder`, `data-i18n-alt`, `data-i18n-aria-label` and `data-i18n-content`. On a first visit the site follows the browser's language; visitors whose language is not offered get English, and a choice made with the language switch is remembered. To add a string: write it in Dutch in the HTML with a new key, then add that key to every language in `js/translations.js`.
 
 **Contact form.** The form sends nothing itself. It opens a draft in the visitor's own email app. The receiving address is `CONTACT_EMAIL` at the top of `js/site.js`. The intake button next to it links to a Google Calendar booking page; nothing loads from Google unless a visitor clicks it.
 
