@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Portaal, bureau (nagebouwd met fictieve gegevens)</title>
+<link rel="stylesheet" href="screens.css">
+<style>
+  body { background: #f4f6fa; color: #171a21; padding: 14px 18px; }
+  .top { gap: 10px; margin-bottom: 12px; }
+  .bolt { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: #fff; box-shadow: 0 1px 4px rgb(20 30 60 / 12%); color: #f2b705; }
+  .product { font-size: 19px; letter-spacing: 0; font-style: italic; }
+  .product small { margin-left: 6px; font-size: 9px; font-style: normal; letter-spacing: 0.3em; color: #7a8294; }
+  .sync { padding: 2px 7px; border: 1px solid #bfe6cf; border-radius: 5px; background: #effaf3; font-size: 8px; color: #1f8a4c; }
+  .user { gap: 8px; padding: 5px 12px 5px 6px; border-radius: 99px; background: #fff; box-shadow: 0 1px 4px rgb(20 30 60 / 10%); font-size: 10px; }
+  .user i { width: 24px; height: 24px; border-radius: 50%; background: #d7dce6; }
+  .panel { border-radius: 12px; background: #fff; box-shadow: 0 1px 4px rgb(20 30 60 / 8%); }
+  .tabs { gap: 26px; padding: 12px 18px; border-bottom: 1px solid #edf0f5; font-size: 12.5px; color: #5c6475; }
+  .tabs b { padding-bottom: 4px; border-bottom: 2px solid #2f6fed; color: #171a21; }
+  .intro { display: grid; grid-template-columns: 1fr 1.25fr auto; gap: 18px; align-items: center; padding: 14px 18px; }
+  .intro .ico { display: grid; flex: none; place-items: center; width: 42px; height: 42px; border-radius: 10px; }
+  .intro h2 { font-size: 10.5px; letter-spacing: 0.18em; }
+  .intro p { margin-top: 3px; font-size: 10.5px; color: #5c6475; }
+  .radar p { color: #171a21; }
+  .ring { display: grid; place-items: center; width: 52px; height: 52px; border: 2px solid #f2a33a; border-radius: 50%; color: #f2a33a; font-weight: 700; }
+  .counts { gap: 12px; padding: 0 18px 12px; font-size: 11.5px; font-weight: 500; }
+  .counts b { font-weight: 700; }
+  section { margin-top: 14px; padding: 14px 18px; }
+  section > h3 { font-size: 11.5px; }
+  section > p { margin-bottom: 10px; font-size: 11px; color: #5c6475; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .card { gap: 10px; padding: 12px 14px; border: 1.5px solid #e6e9f0; border-radius: 10px; background: #fff; }
+  .card.focus { border-color: #2f6fed; }
+  .card.warn { border-color: #f2b705; }
+  .card.idle { opacity: 0.38; }
+  .card .ico { display: grid; flex: none; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: #f1f4f9; color: #2f6fed; }
+  .card h4 { margin: 0; font-size: 11px; font-style: italic; letter-spacing: 0; }
+  .card small { display: block; font-size: 7.5px; letter-spacing: 0.04em; text-transform: uppercase; color: #8a91a1; }
+  .card strong { font-size: 17px; }
+  .card em { display: block; font-size: 7.5px; font-style: normal; font-weight: 700; text-align: right; color: #d93a3a; }
+</style>
+</head>
+<body>
+  <header class="row top">
+    <span class="bolt"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span>
+    <span class="condensed product">Portaal<small>Industrial OS</small></span>
+    <span class="condensed sync">Live sync</span>
+    <span class="grow"></span>
+    <span class="row user"><i></i><b>Demo-gebruiker</b></span>
+  </header>
+
+  <div class="panel">
+    <nav class="row tabs">
+      <b>Het Bureau</b><span>Contracten</span><span>Offertes</span><span>Werkbonnen</span><span>Facturen</span><span>Voorraad</span><span>Klanten</span><span>Team</span>
+    </nav>
+    <div class="intro">
+      <div class="row" style="gap:12px">
+        <span class="ico" style="background:#f6cf3d"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M5 9h11v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4zM16 10h2a2 2 0 0 1 0 4h-2M8 3v3M12 3v3"/></svg></span>
+        <div><h2 class="condensed">Overzicht openstaande acties</h2><p>Verwerk binnenkomende aanvragen, volg werkbonnen op en volg offertes en contracten op.</p></div>
+      </div>
+      <div class="row radar" style="gap:12px">
+        <span class="ico" style="background:#f1f4f9;color:#2f6fed"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4M9 13v2M15 13v2"/></svg></span>
+        <div><h2 class="condensed">AI Flow Radar <span style="color:#d98a00">· 2 dringend</span></h2><p>De prioriteiten liggen klaar: beslis over de uitgelopen bon van Garage Maes, behandel het signaal van Bakkerij Peeters en begin aan de contracten bij Janssens.</p></div>
+      </div>
+      <span class="ring">!</span>
+    </div>
+    <div class="row counts"><b>48 openstaande acties</b><span style="color:#d93a3a">Inbox &amp; urgent</span><span style="color:#2f6fed">Lopende werkbonnen</span><span style="color:#1f8a4c">Offertes &amp; opvolging</span></div>
+  </div>
+
+  <section class="panel">
+    <h3 class="condensed">Inbox &amp; urgent</h3>
+    <p>Nieuwe aanvragen, planning zonder lead-technicus, uitloop op raming, verlofaanvragen.</p>
+    <div class="cards">
+      <div class="row card focus"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><div class="grow"><h4 class="condensed">Signalen (inbox)</h4><small>Nieuwe aanvragen</small></div><div><strong>1</strong><em>1 nieuw</em></div></div>
+      <div class="row card idle"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M17 11a3 3 0 1 0 0-6M21 20a5 5 0 0 0-3-4.5"/></svg></span><div class="grow"><h4 class="condensed">Vloot mismatch</h4><small>Geen lead-technicus</small></div><strong>0</strong></div>
+      <div class="row card"><span class="ico" style="color:#d93a3a"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8M15 17h6v-6"/></svg></span><div class="grow"><h4 class="condensed">Rode marges</h4><small>Uitvoeringstijd boven raming</small></div><strong>6</strong></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h3 class="condensed">Lopende werkbonnen</h3>
+    <p>Te plannen, opvolg-meldingen, pauzes, validatie, afwijkingen.</p>
+    <div class="cards">
+      <div class="row card focus"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></span><div class="grow"><h4 class="condensed">Te plannen</h4><small>Nieuwe bonnen en open opvolg</small></div><div><strong>12</strong><em>1 nieuw</em></div></div>
+      <div class="row card"><span class="ico" style="color:#1f8a4c"><svg width="16" height="16" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><div class="grow"><h4 class="condensed">Niet uitgevoerd, herplannen</h4><small>Stond gepland, niet gestart</small></div><strong>2</strong></div>
+      <div class="row card warn"><span class="ico" style="color:#d98a00"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg></span><div class="grow"><h4 class="condensed">Voltooid?</h4><small>Planningsperiode voorbij</small></div><strong>1</strong></div>
+    </div>
+  </section>
+</body>
+</html>

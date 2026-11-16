@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Portaal, mobiele taken (nagebouwd met fictieve gegevens)</title>
+<link rel="stylesheet" href="screens.css">
+<style>
+  body { background: #f1f4fa; color: #171a21; font-size: 15px; }
+  header { justify-content: space-between; padding: 54px 16px 16px; border-bottom: 1px solid #e3e7ef; background: #fff; }
+  header h1 { font-size: 19px; letter-spacing: 0.02em; }
+  header p { font-size: 12.5px; color: #6b7385; }
+  .out { gap: 6px; padding: 8px 12px; border: 1px solid #dfe3ec; border-radius: 12px; font-size: 10.5px; color: #4a5263; }
+  main { padding: 18px 16px; }
+  h2 { margin: 16px 0 8px; font-size: 10.5px; color: #9aa1b2; }
+  h2:first-child { margin-top: 0; font-size: 12px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .tile { padding: 20px 18px; border: 2px solid; border-radius: 16px; }
+  .tile strong { display: block; margin-top: 6px; font-size: 26px; line-height: 1.1; }
+  .tile span { font-size: 13px; font-weight: 700; }
+  .wide { justify-content: space-between; grid-column: 1 / -1; padding: 18px 16px; }
+  .wide strong { margin: 0; font-size: 22px; }
+  .amber { border-color: #f7e08f; background: #f3ece0; color: #a8571a; }
+  .blue { border-color: #c5e3f7; background: #deebf5; color: #2a67a6; }
+  .indigo { border-color: #c9cff5; background: #e3e5f6; color: #2f2c8f; }
+  .violet { border-color: #d6d0f5; background: #e6e3f4; color: #6a2fc9; }
+  .brown { border-color: #f3d267; background: #ede7e1; color: #8a4a1c; }
+  .teal { border-color: #b4efdc; background: #dfeaee; color: #24615a; }
+</style>
+</head>
+<body>
+  <header class="row">
+    <div><h1 class="condensed">Mobiele taken</h1><p>Snel iets doen onderweg</p></div>
+    <span class="row condensed out"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M10 4H5v16h5M14 8l4 4-4 4M18 12H9"/></svg>Afmelden</span>
+  </header>
+  <main>
+    <h2 class="condensed">Overzicht</h2>
+    <h2 class="condensed">Triage &amp; vandaag</h2>
+    <div class="grid">
+      <div class="tile amber"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10.5 21h3"/></svg><strong>1</strong><span>Signalen</span></div>
+      <div class="tile blue"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><strong>3</strong><span>Planning</span></div>
+    </div>
+    <h2 class="condensed">Wachtrij</h2>
+    <div class="grid">
+      <div class="row tile wide indigo"><span class="row" style="gap:10px"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 13l3-8h12l3 8v6H3zM3 13h5l1 2h6l1-2h5"/></svg>Zonder geplande datum</span><strong>12</strong></div>
+    </div>
+    <h2 class="condensed">Uitvoering</h2>
+    <div class="grid">
+      <div class="tile violet"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><strong>1</strong><span>Bezig</span></div>
+      <div class="tile brown"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><strong>1</strong><span>Verstreken</span></div>
+      <div class="tile teal"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M6 3h9v6M6 3v18h12v-8M4 7h3M4 11h3M4 15h3M13 13l6-6 2 2-6 6h-2z"/></svg><strong>1</strong><span>Veldverslag</span></div>
+    </div>
+    <h2 class="condensed">Dossier &amp; facturatie</h2>
+    <div class="grid">
+      <div class="tile blue"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7zM14 3v4h4"/></svg><strong>4</strong></div>
+      <div class="tile teal"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><strong>5</strong></div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/* Shared base for the rebuilt app screens. These pages are rendered to images by tools/render_screens.py. */
+@font-face { font-family: "Roboto"; font-weight: 400; src: url("../../assets/fonts/roboto-400.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-weight: 500; src: url("../../assets/fonts/roboto-500.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-weight: 700; src: url("../../assets/fonts/roboto-700.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Condensed"; font-weight: 700; src: url("../../assets/fonts/roboto-condensed-700.woff2") format("woff2"); }
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; overflow: hidden; }
+body { font-family: "Roboto", sans-serif; font-size: 14px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p, ul, dl, dd { margin: 0; }
+ul { padding: 0; list-style: none; }
+svg { display: block; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.condensed { font-family: "Roboto Condensed", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.row { display: flex; align-items: center; }
+.grow { flex: 1; }

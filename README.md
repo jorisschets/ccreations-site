@@ -24,7 +24,10 @@ js/translations.js      French, Spanish and English strings
 assets/sprite.svg       Logo and icons, referenced with <use>
 assets/fonts/           Self-hosted fonts (Latin subset)
 assets/brand/           Generated logo files and social templates
+assets/screens/         Rendered images of the rebuilt app screens
 tools/build_brand.py    Generates everything in assets/brand/
+tools/screens/          HTML sources of the rebuilt app screens
+tools/render_screens.py Renders those sources to assets/screens/
 ```
 
 ## How things work
@@ -44,6 +47,13 @@ python3 tools/build_brand.py
 
 The same script writes `assets/favicon.svg`. The PNG files (`favicon-32.png`, `apple-touch-icon.png` and `brand/social-avatar.png`) were rasterised from the generated SVGs once and need redoing by hand if the monogram changes.
 
+**Project screens.** Each screen in the Projects section is an HTML page in `tools/screens/`, rendered to an image. After editing one:
+
+```sh
+pip install playwright pillow
+python3 tools/render_screens.py
+```
+
 ## Checks
 
 The only Node dependencies are linters.
@@ -57,7 +67,7 @@ npm run lint
 
 - No analytics, no cookies, no third-party requests. Fonts are served from this repository.
 - The language choice is kept in the browser's `localStorage` and nowhere else.
-- Project screenshots are anonymised: client names, people, addresses and identifiers were replaced before the images were added. The originals are not in this repository and must never be committed.
+- The project screens are not screenshots. They are rebuilt by hand from the real applications, in their real layout, with fictional data, and the site says so under each one. Real screenshots with client data must never be committed.
 
 ## Known limitation
 

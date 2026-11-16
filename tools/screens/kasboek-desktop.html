@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Kasboek, dagboek (nagebouwd met fictieve gegevens)</title>
+<link rel="stylesheet" href="screens.css">
+<style>
+  body { background: #f4f4f2; color: #1c1c1a; font-size: 12.5px; }
+  header { gap: 22px; padding: 10px 26px; border-bottom: 1px solid #f1e3a8; background: #fffdf5; }
+  .name { padding-left: 10px; border-left: 3px solid #f2c53d; font-size: 14px; line-height: 1.2; }
+  .name small { display: block; font-size: 9px; letter-spacing: 0.05em; color: #77756c; }
+  nav { gap: 16px; }
+  nav b { border-bottom: 1.5px solid #c9601e; font-weight: 400; color: #8a3b0d; }
+  .langs { padding: 2px; border: 1px solid #f1e3a8; border-radius: 99px; font-size: 9.5px; color: #77756c; }
+  .langs span { padding: 3px 8px; }
+  .langs b { padding: 3px 8px; border-radius: 99px; background: #f6d24a; color: #1c1c1a; }
+  .file { padding: 7px; border-bottom: 1px solid #f1e3a8; background: #fffbe9; text-align: center; }
+  main { display: flex; flex-direction: column; gap: 10px; padding: 14px 26px; }
+  .box { border: 1px solid #e6e6e1; border-radius: 8px; background: #fff; }
+  .date { gap: 8px; padding: 9px 12px; }
+  .field { padding: 6px 10px; border: 1px solid #dcdcd6; border-radius: 6px; }
+  .today { padding: 4px 9px; border-radius: 6px; background: #fbeab0; font-size: 11px; font-weight: 700; }
+  .entry { display: grid; grid-template-columns: 1.4fr 1.6fr 0.9fr 0.9fr auto; gap: 8px; align-items: end; padding: 10px 12px; }
+  .entry small { display: block; margin-bottom: 3px; font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; color: #77756c; }
+  .entry .field { color: #8d8b82; }
+  .entry .active { border: 2px solid #c9861e; }
+  .add { padding: 7px 13px; border-radius: 6px; background: #f6d24a; font-weight: 700; }
+  table { width: 100%; border-collapse: collapse; }
+  th { padding: 8px 12px; background: #f6f6f3; font-size: 10px; letter-spacing: 0.04em; text-align: left; text-transform: uppercase; }
+  td { padding: 9px 12px; border-top: 1px solid #efefea; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .in { color: #1f6b47; }
+  .out { color: #a02020; }
+  tfoot td { background: #fafaf8; font-weight: 700; }
+  .sums { padding: 8px 12px; border-top: 3px double #dcdcd6; background: #fafaf8; }
+  .sum { justify-content: flex-end; gap: 12px; padding: 3px 0; color: #55534c; }
+  .sum span:last-child { width: 96px; padding: 4px 8px; border: 1px solid #d4d4ce; border-radius: 4px; background: #fff; font-weight: 700; text-align: right; }
+  .balance { margin: 6px -12px -8px; padding: 9px 12px; border-radius: 0 0 8px 8px; background: #fbeab0; color: #1c1c1a; font-weight: 700; }
+</style>
+</head>
+<body>
+  <header class="row">
+    <span class="name">cashregapp<small>CCREATIONS.TOOLS</small></span>
+    <span class="grow"></span>
+    <nav class="row"><b>Kasboek</b><span>Rapporten</span></nav>
+    <span class="grow"></span>
+    <span class="row langs"><b>NL</b><span>FR</span><span>EN</span></span>
+    <span>Demo Manager</span>
+  </header>
+  <div class="file">Bakkerij Demo Noord</div>
+  <main>
+    <div class="row box date"><span class="field">‹</span><span class="field"><b>15-11-2026</b></span><span class="field">›</span><span class="today">Vandaag</span></div>
+    <div class="box entry">
+      <div><small>Kaspost</small><div class="field active">Kies kaspost</div></div>
+      <div><small>Info</small><div class="field">&nbsp;</div></div>
+      <div><small>In</small><div class="field num">IN</div></div>
+      <div><small>Uit</small><div class="field num">UIT</div></div>
+      <span class="add">+</span>
+    </div>
+    <div class="box" style="overflow:hidden">
+      <table>
+        <thead><tr><th>Kaspost</th><th>Info</th><th class="num in">In</th><th class="num out">Uit</th></tr></thead>
+        <tbody>
+          <tr><td>Bancontact</td><td>Webshop</td><td class="num in">50,00</td><td></td></tr>
+          <tr><td>Dagontvangsten</td><td>Verkoop zaterdag</td><td class="num in">834,00</td><td></td></tr>
+          <tr><td>Kasverschillen</td><td>Correctie</td><td></td><td class="num out">11,00</td></tr>
+        </tbody>
+        <tfoot><tr><td></td><td class="num">totaal</td><td class="num in">884,00</td><td class="num out">11,00</td></tr></tfoot>
+      </table>
+      <div class="sums">
+        <div class="row sum"><span>voorgaand saldo</span><span class="in">1.275,00</span></div>
+        <div class="row sum"><span>subtotaal</span><span class="in">2.159,00</span></div>
+        <div class="row sum"><span>af te trekken uitgaven</span><span class="out">11,00</span></div>
+        <div class="row sum balance"><span>saldo dd. 15/11/2026</span><span class="in">2.148,00</span></div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

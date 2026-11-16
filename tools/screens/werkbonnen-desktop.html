@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Werkbonnen, dagoverzicht (nagebouwd met fictieve gegevens)</title>
+<link rel="stylesheet" href="screens.css">
+<style>
+  body { background: #f3f4f6; color: #16181d; font-size: 12px; }
+  header { gap: 14px; padding: 10px 18px; border-bottom: 1px solid #e2e4e9; background: #fff; }
+  .logo { width: 26px; height: 20px; border-radius: 5px; background: #16181d; }
+  .tabs { gap: 16px; color: #5b6170; }
+  .tabs b { padding: 5px 10px; border: 1.5px solid #16181d; border-radius: 99px; color: #16181d; }
+  .tabs i { display: inline-grid; place-items: center; width: 14px; height: 14px; margin-left: 4px; border-radius: 50%; background: #a8431c; font-size: 8px; font-style: normal; color: #fff; }
+  .search { width: 150px; padding: 6px 10px; border: 1px solid #dcdfe5; border-radius: 6px; color: #9aa0ad; }
+  .new { padding: 7px 12px; border-radius: 6px; background: #16181d; font-weight: 700; color: #fff; }
+  main { display: grid; grid-template-columns: 1fr 210px; gap: 14px; align-items: start; padding: 14px 18px; }
+  .box { border: 1px solid #e2e4e9; border-radius: 8px; background: #fff; }
+  .day { padding: 12px 16px; border-bottom: 2px solid #e2703a; }
+  .day h2 { font-size: 16px; font-weight: 500; }
+  .day h2 span { margin-left: 8px; padding: 2px 8px; border: 1px solid #dcdfe5; border-radius: 99px; font-size: 10px; }
+  .day p { margin-top: 2px; color: #5b6170; }
+  .ok { color: #1f7a4d; }
+  .due { color: #a8431c; }
+  .bon { display: grid; grid-template-columns: 26px 118px 1fr auto; gap: 10px; padding: 10px 16px; border-bottom: 1px solid #eceef2; }
+  .bon:last-child { border: 0; }
+  .ico { width: 26px; height: 26px; border-radius: 6px; background: #eef0f3; }
+  .bon b { display: block; }
+  .bon small { display: block; font-size: 10px; color: #6b7180; }
+  .bon .muted { color: #6b7180; }
+  .meta { text-align: right; }
+  .pill { display: inline-block; padding: 1px 7px; border: 1px solid #bfe3cf; border-radius: 99px; background: #e9f7ef; font-size: 10px; font-weight: 500; color: #1f7a4d; }
+  .pill.due { border-color: #f1c9b3; background: #fdeee6; color: #a8431c; }
+  aside { border-left: 3px solid #e2703a; }
+  aside h3 { padding: 10px 14px; border-bottom: 1px solid #eceef2; font-size: 12px; }
+  aside li { gap: 8px; padding: 10px 14px; border-bottom: 1px solid #eceef2; }
+  aside li:last-child { border: 0; }
+  aside strong { font-size: 14px; color: #b3341f; }
+</style>
+</head>
+<body>
+  <header class="row">
+    <span class="logo"></span>
+    <nav class="row tabs"><b>Dagoverzicht</b><span>Opvolging<i>3</i></span><span>Park</span><span>Bestellijst</span></nav>
+    <span class="grow"></span>
+    <span class="search">Zoek bon of machine</span>
+    <span class="new">+ Nieuwe werkbon</span>
+  </header>
+  <main>
+    <div class="box">
+      <div class="day">
+        <h2>Vrijdag 13 nov<span>Rapport</span></h2>
+        <p>5 werkbonnen · <span class="ok">5 u 15 min geregistreerd</span> · <span class="due">4 afgewerkt, 1 naar opvolging</span></p>
+      </div>
+      <div class="bon"><span class="ico"></span><div><b>Kraan 12</b><small>Rupskraan · 1-ABC-123</small></div><div><small>BON 151</small><b>Hydraulische slang van de sorteergrijper vervangen</b><span class="muted"><b style="display:inline">Uitgevoerd.</b> Slang vervangen, 20 l hydrauliekolie bijgevuld.</span></div><div class="meta"><small>Werf Noord, Gent</small><span class="pill due">Verder op te volgen</span><small>12:40 · 2 u 50 min</small></div></div>
+      <div class="bon"><span class="ico"></span><div><b class="muted">Atelier</b><small>Gebouw</small></div><div><small>BON 164</small><b>Camionette: koelvloeistof en ruitenvloeistof bijvullen</b></div><div class="meta"><small>Atelier</small><span class="pill">Afgewerkt</span><small>11:00 · 1 u</small></div></div>
+      <div class="bon"><span class="ico"></span><div><b class="muted">Atelier</b><small>Gebouw</small></div><div><small>BON 163</small><b>Paletten in rekken zetten</b></div><div class="meta"><small>Atelier</small><span class="pill">Afgewerkt</span><small>10:30 · 30 min</small></div></div>
+      <div class="bon"><span class="ico"></span><div><b class="muted">Klein materiaal</b><small>Kettingen</small></div><div><small>BON 161</small><b>Kettingen herstellen</b></div><div class="meta"><small>Atelier</small><span class="pill">Afgewerkt</span><small>08:55 · 35 min</small></div></div>
+      <div class="bon"><span class="ico"></span><div><b class="muted">Atelier</b><small>Gebouw</small></div><div><small>BON 160</small><b>Bankschroef op werkbank bevestigen</b></div><div class="meta"><small>Atelier</small><span class="pill">Afgewerkt</span><small>08:40 · 15 min</small></div></div>
+    </div>
+    <aside class="box">
+      <h3>Ligt bij jou</h3>
+      <ul>
+        <li class="row"><strong>3</strong><span class="grow">bonnen verder op te volgen</span><span class="pill due">Opvolgen</span></li>
+        <li class="row"><strong>6</strong><span class="grow">onderhouden, 5 over tijd</span><span class="pill due">Plannen</span></li>
+      </ul>
+    </aside>
+  </main>
+</body>
+</html>
