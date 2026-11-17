@@ -159,19 +159,24 @@ DOTS = (
     f'<circle cx="12" cy="12" r="1" fill="{CHARCOAL}" fill-opacity="0.1"/></pattern></defs>'
 )
 
-# LinkedIn banner, 1584 x 396. The left third stays empty: the profile photo covers it.
-logo, _ = placed(lockup_horizontal(CHARCOAL), 560, 96, 104)
-line, _ = DISPLAY_HEAVY.outline("Systemen die de operatie van KMO’s sturen.", 38, 560, 292)
-write(
-    "social-linkedin-banner.svg",
-    svg(
-        1584, 396,
-        f'{DOTS}<rect width="1584" height="396" fill="{SAND}"/><rect width="1584" height="396" fill="url(#dots)"/>'
-        f'<rect width="1584" height="10" fill="{ORANGE}"/><rect y="394" width="1584" height="2" fill="{CHARCOAL}"/>'
-        f'{logo}<path fill="{CHARCOAL}" d="{line}"/>',
-        "CCreations LinkedIn-banner",
-    ),
-)
+# LinkedIn banners, 1584 x 396. The left third stays empty: the profile photo covers it.
+def linkedin_banner(filename, tagline):
+    logo, _ = placed(lockup_horizontal(CHARCOAL), 560, 96, 104)
+    line, _ = DISPLAY_HEAVY.outline(tagline, 38, 560, 292)
+    write(
+        filename,
+        svg(
+            1584, 396,
+            f'{DOTS}<rect width="1584" height="396" fill="{SAND}"/><rect width="1584" height="396" fill="url(#dots)"/>'
+            f'<rect width="1584" height="10" fill="{ORANGE}"/><rect y="394" width="1584" height="2" fill="{CHARCOAL}"/>'
+            f'{logo}<path fill="{CHARCOAL}" d="{line}"/>',
+            "CCreations LinkedIn banner",
+        ),
+    )
+
+
+linkedin_banner("social-linkedin-banner.svg", "Systemen die de operatie van KMO’s sturen.")
+linkedin_banner("social-linkedin-banner-en.svg", "Systems that run your SME’s operations.")
 
 # Square post, 1080 x 1080.
 eyebrow, _ = LABEL.outline("VOORDEEL 02", 30, 96, 190, tracking=0.14)
@@ -188,6 +193,19 @@ write(
         f'<path fill="{AMBER}" d="{eyebrow}"/>{headline}'
         f'<rect x="96" y="800" width="888" height="2" fill="{SAND}" fill-opacity="0.3"/>{logo}',
         "CCreations vierkante post",
+    ),
+)
+
+# Link preview image (Open Graph), 1200 x 630: what LinkedIn and others show for a shared link.
+logo, _ = placed(lockup_horizontal(CHARCOAL), 120, 200, 140)
+line, _ = DISPLAY_HEAVY.outline("Fullstack developer & AI advisor for SMEs", 44, 120, 440)
+write(
+    "og-image.svg",
+    svg(
+        1200, 630,
+        f'{DOTS}<rect width="1200" height="630" fill="{SAND}"/><rect width="1200" height="630" fill="url(#dots)"/>'
+        f'<rect width="1200" height="14" fill="{ORANGE}"/>{logo}<path fill="{CHARCOAL}" d="{line}"/>',
+        "CCreations",
     ),
 )
 
